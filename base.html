@@ -2,15 +2,24 @@
 <html>
   <head>
     <base href="https://molnaristvan95.github.io/crossorigoverride/">
+    <style>
+      img{
+        display:block;
+        margin:auto 8px;
+      }
+    </style>
   </head>
 <body style="background:black;">
-  <img id="scream" src="HQ.png" alt="The Scream" width="" height="">
- <article id="source" contenteditable="true" style="border:1px outset green; height:32px; font-size:24px; color:#ffa;" ondblclick="this.innerText='';">img.jpg</article>
-  <button type="button" id="engine">Read URL</button>
+  
 <script type="text/javascript">
-  document.getElementById('engine').addEventListener('click', () => {
-  document.getElementById('scream').setAttribute('src', document.getElementById('source').innerText);
-  });
+  let string = 'cloud1.png,cloud2.png,cloud3.png,cloud4.png,sbody.png,shand.png,shand2.png,sleg.png,sleg2.png',
+    array = string.split(',');
+  let loadThem = () => {
+    for (let x = 0; x < array.length; x++) {
+      document.body.innerHTML += '<img id="s' + x + '" src="' + array[x] + '" type="image/png">'; 
+    }
+  }
+  loadThem();
   </script>
  
 
