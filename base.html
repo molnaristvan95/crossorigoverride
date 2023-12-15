@@ -10,16 +10,20 @@
     </style>
   </head>
 <body style="background:black;">
-  
+  <input type="text" id="pic">
+  <input type="text" id="tipus">
+  <button type="button" id="btn">Load imge name</button>
 <script type="text/javascript">
-  let string = 'cloud1.png,cloud2.png,cloud3.png,cloud4.png,sbody.png,shand.png,shand2.png,sleg.png,sleg2.png',
-    array = string.split(',');
-  let loadThem = () => {
-    for (let x = 0; x < array.length; x++) {
-      document.body.innerHTML += '<img id="s' + x + '" src="' + array[x] + '" type="image/png">'; 
-    }
-  }
-  loadThem();
+  const id = (i) => {
+    return document.getElementById(i);
+  };
+  
+  id('btn').addEventListener('click', () => {
+    let source = id('pic').value,
+      tip = id('tipus').value;
+   document.body.innerHTML += '<img src="' + source + '" type="image/' + tip + '">'; 
+  });
+  
   </script>
  
 
